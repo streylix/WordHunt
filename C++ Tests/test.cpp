@@ -12,7 +12,7 @@ int main() {
     string name;
     ifstream infile("words");
     ifstream namefile("names");
-    ofstream outfile("words2");
+    ofstream outfile("WORDS");
 
     if (!infile.is_open()) {
         cerr << "Unable to open file." << endl;
@@ -36,9 +36,14 @@ int main() {
         //         break;
         //     }
         // }
-        if (/*isNormal && word.find('\'') == string::npos && word.length() < 16 &&*/ word.length() > 2) { // Add conditions for apostrophes and length
-            words.push_back(word);
+        // if (/*isNormal && word.find('\'') == string::npos && word.length() < 16 &&*/ word.length() > 2) { // Add conditions for apostrophes and length
+        //     words.push_back(word);
+        // }
+        string newWord;
+        for (char c: word){
+            newWord += toupper(c);
         }
+        word = newWord;
     }
 
     infile.close();
@@ -50,6 +55,6 @@ int main() {
     for (const auto& w : words) {
         outfile << w << endl;
     }
-    cout << "DONE!" << endl;
+    cout << "done" << endl;
     return 0;
 }
