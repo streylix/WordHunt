@@ -21,22 +21,22 @@ int main() {
 
     // Read in all the words from the file
     while (infile >> word) {
-        bool isNormal = true;
-        while (namefile >> name){
-            if (word.substr(0, name.size()) == name){
-                isNormal = false;
-                break;
-            }
-        }
-        namefile.clear();
-        namefile.seekg(0);
-        for (char c : word) {
-            if (!isalpha(c)) { // Add condition to check for non-alphabetical characters
-                isNormal = false;
-                break;
-            }
-        }
-        if (isNormal && word.find('\'') == string::npos && word.length() < 16) { // Add conditions for apostrophes and length
+        // bool isNormal = true;
+        // while (namefile >> name){
+        //     if (word.substr(0, name.size()) == name){
+        //         isNormal = false;
+        //         break;
+        //     }
+        // }
+        // namefile.clear();
+        // namefile.seekg(0);
+        // for (char c : word) {
+        //     if (!isalpha(c)) { // Add condition to check for non-alphabetical characters
+        //         isNormal = false;
+        //         break;
+        //     }
+        // }
+        if (/*isNormal && word.find('\'') == string::npos && word.length() < 16 &&*/ word.length() > 2) { // Add conditions for apostrophes and length
             words.push_back(word);
         }
     }
