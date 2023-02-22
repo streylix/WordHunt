@@ -1,0 +1,23 @@
+Prompt for 16 characters
+Get each set of 4 characters divided by newline character in 2d array
+Format 16 characters entered as a 4x4 grid
+  Set gets put into nodes
+  Node array 1 through 16
+  For every node
+    Node subvariables starting from top left ending in bottom right will be set appropriately to character in set array
+    If the direction doesn't exist, ignore loop iteration
+
+findCharacters
+For every instance of characters Starting from first (top left) character
+  if Node direction contains a valid character
+    create new String equal to character plus its direction
+    run computerChar
+        
+string[] computerChar(String Node+Node.dir)
+    set testing string value equal to character read as well as characters direcition
+    check if test string matches any words in "words" file
+      if true, check size of word read in from file known
+        if word is bigger than test string
+          run computerChar again, sending in test string appended with directions next direction. Set returned value to validWords
+        otherwise
+          store in array validWords
