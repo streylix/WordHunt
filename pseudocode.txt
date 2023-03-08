@@ -21,3 +21,13 @@ string[] computerChar(String Node+Node.dir)
           run computerChar again, sending in test string appended with directions next direction. Set returned value to validWords
         otherwise
           store in array validWords
+          
+void addWords()
+    Prompt user if words weren't found
+      if user answered yes
+        prompt user to enter all unfound words, end loop with "!"
+        prompt user if they want to truncate words to file
+        if yes
+          update file
+        otherwise
+        discard changes
